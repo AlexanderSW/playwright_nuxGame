@@ -1,0 +1,17 @@
+services:
+  playwright:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: playwright-nuxgame
+    working_dir: /app
+    init: true
+    ipc: host
+    env_file:
+      - .env
+    environment:
+      CI: "1"
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+    command: npx playwright test --config=playwright.docker.config.ts
