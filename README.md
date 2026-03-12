@@ -5,7 +5,7 @@ Test automation for Business Portal based on Playwright.
 ## Execute Playwright tests locally
 
 1. Install [Node.js](https://nodejs.org/uk/download/) on your computer.
-2. Clone repository: <https://bitbucket.org/veryfastio/playwright_tests/src/main>
+2. Clone repository: <https://github.com/AlexanderSW/playwright_nuxGame>
 3. Open terminal and switch to the project directory.
 4. Run `npm install`
 5. Make sure you have `.env` file with credentials (ask AQA team for values).
