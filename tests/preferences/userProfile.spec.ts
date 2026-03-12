@@ -1,6 +1,6 @@
 import { test } from "../../fixture";
 
-test.describe("Campaign Tests", () => {
+test.describe("Preferences Tests", () => {
     const USERNAME = process.env.USERNAME;
     const PASSWORD = process.env.PASSWORD;
 
