@@ -1,13 +1,8 @@
 import { test } from "../../fixture";
 
 test.describe("Preferences Tests", () => {
-    const USERNAME = process.env.USERNAME;
-    const PASSWORD = process.env.PASSWORD;
 
-    test.beforeEach(async ({ app }) => {
-        await app.loginPage.navigate();
-        await app.loginPage.login(USERNAME!, PASSWORD!);
-    });
+    test.use({storageState:'./auth/user.json'})
 
     test("Setup user language", async ({ app, page }) => {
         const randomLanguage = app.userProfilePage.getRandomLanguage();
@@ -15,6 +10,7 @@ test.describe("Preferences Tests", () => {
 
         await app.userProfilePage.reload();
         await page.goto("https://commons.wikimedia.org/wiki/Main_Page", { waitUntil: "networkidle" })
+        await app.userProfilePage.reload();
 
         await app.userProfilePage.navigateToUserProfile();
 
